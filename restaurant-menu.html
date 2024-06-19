@@ -1,0 +1,517 @@
+<!-- restaurant_menu.html -->
+<!-- Codedex Final Project : HTML -->
+ 
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Nook's Cranny Restaurant!</title>
+        <!-- Font link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            header{
+                display:flex;
+                align-items: center;
+                padding: 10px;
+                background-color: #fffcec;
+            }
+
+            img#header-img { 
+                height: 100px;
+                margin-right: 20px;
+            }
+
+            h1 {
+                font-family: 'Grandstander', cursive;
+                margin: 0;
+                color: #130114;
+            }
+
+            /* Style for the nav */
+
+            nav ul li{
+                margin-left: 650px;
+                list-style-type: none;
+                text-align: right;
+                font-family: 'Grandstander', cursive;
+                font-weight: bold;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a{
+                color: black;
+                text-decoration: none;
+                padding: 2px 15px;
+                display: block;
+                font-size: 1.5em;
+            }
+
+            nav ul li a:hover{
+                background-color: #fcb7c2;
+                color: white;
+                border-radius: 10px;
+                padding: 5px 20px;
+                transform: scale(1.1);
+                transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+            }
+
+            /* Style for the menu section*/
+            #menu {
+                padding: 20px;
+                background-color: papayawhip;
+                background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea3d9118-a4d6-4b0c-848c-fbb3ab40ae6b/ddslcc1-6ce1590b-db44-49e4-acb2-5393959e7424.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VhM2Q5MTE4LWE0ZDYtNGIwYy04NDhjLWZiYjNhYjQwYWU2YlwvZGRzbGNjMS02Y2UxNTkwYi1kYjQ0LTQ5ZTQtYWNiMi01MzkzOTU5ZTc0MjQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.me0WOGMTkTPCDe-nJez04TRDI4AZ8sDHreKWy8dYhDk');
+                background-size:auto;
+                background-position: center;
+                background-repeat: repeat;
+            }
+
+            #menu h2{
+                font-family: 'Grandstander', cursive;
+                text-align: center;
+            }
+
+            #menu .main-heading {
+                font-size: 2.5em;
+                color: #f15757;
+            }
+
+            .menu-grid {
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+                gap: 10px;
+            }
+
+            article {
+                border: 1px solid #fff;
+                padding: 10px;
+                background-color: #f0d4d4;
+                text-align: center;
+            }
+
+            article img{
+                display:block;
+                margin: 0 auto 10px;
+                width: 100px;
+                height: auto;
+            }
+
+            article h3 {
+                font-family: 'Grandstander', cursive;
+                text-align: center;
+                margin: 0 0 10px;
+            }
+
+            /*Styling for order form*/
+            #form {
+                padding: 20px;
+                background-color: papayawhip;
+                background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ea3d9118-a4d6-4b0c-848c-fbb3ab40ae6b/ddslcc1-6ce1590b-db44-49e4-acb2-5393959e7424.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VhM2Q5MTE4LWE0ZDYtNGIwYy04NDhjLWZiYjNhYjQwYWU2YlwvZGRzbGNjMS02Y2UxNTkwYi1kYjQ0LTQ5ZTQtYWNiMi01MzkzOTU5ZTc0MjQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.me0WOGMTkTPCDe-nJez04TRDI4AZ8sDHreKWy8dYhDk');
+                background-size:auto;
+                background-position: center;
+                background-repeat: repeat;
+            }
+
+            #form h2{
+                font-family: 'Grandstander', cursive;
+                text-align: center;
+            }
+            #form .main-heading {
+                font-size: 2.5em;
+                color: #f15757;
+            }
+
+            #form h3 {
+                font-family: 'Grandstander', cursive;
+                text-align: center;
+                margin: 0 0 10px;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+                gap: 10px;
+                align-items: start;
+            }
+
+            .form-grid label {
+                font-family: 'Grandstander', cursive;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+                margin: 0 0 10px;
+            }
+            .number-input {
+                width:50px;
+                padding: 10px;
+            }
+
+            /* Style for extras*/
+            .extras {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 20px;
+            }
+
+            .extras label {
+                display: flex;
+                align-items: center;
+                font-family: 'Grandstander', cursive;
+            }
+
+            .extras input[type="checbox"] {
+                margin-right: 10px;
+            }
+
+            /*Style for special request*/
+            .special-request {
+                display: flex;
+                flex-direction: column;
+                align-items: center ;
+                margin-bottom: 20px;
+            }
+
+            .special-request label {
+                font-family: 'Grandstander', cursive;
+            }
+
+            .special-request textarea {
+                margin-top: 5px;
+                font-family: 'Grandstander', cursive;
+                padding: 10px;
+                border: none;
+                box-sizing: border-box;
+                font-size: medium;
+            }
+
+            /* Style for submit button*/
+            .submit-btn {
+                text-align: center;
+            }
+
+            input[type="submit"] {
+                background-color: #f3677e;
+                color: black;
+                padding: 10px 20px;
+                font-size: 1.2em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                font-family: 'Grandstander', cursive;
+                font-weight: bold;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #FEF5C3;
+                transform: scale(1.1);
+                transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+            }
+
+            
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <!-- Image with and id of "header-img" -->
+             <img src="https://mir-s3-cdn-cf.behance.net/projects/404/462869182393063.Y3JvcCw4MDgsNjMyLDAsMg.jpg" alt="nook's cranny logo" id="header-img">
+            
+             <!-- h1 heading element with the name of the restaurant -->
+             <h1>Nook's Cranny Restaurant</h1>
+            
+             <!-- A navigation section with two heading for "#menu" and "#order-form" -->
+             <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#form">Order Form</a></li>
+                </ul>
+             </nav>
+        </header>
+
+        <main>
+            <!-- Two sections, each with a <h2> heading that says "Menu" and "Place Your Order". -->
+                <!-- Menu section -->
+                <section id="menu">
+                    <h2 class="main-heading">Menu</h2>
+                    <!-- The "Menu" section should have at least three <article> elements for the menu items that use the following elements: -->                   
+                        <!-- An <img> image element. -->
+                        <!-- A <h3> element for the name of the menu item. -->
+                        <!-- A <p> paragraph element that briefly describes the item (1-2 sentences) and includes price information (italicized). -->
+                    <h2>Foods</h2>
+                    <div class="menu-grid">
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/e/ec/Hearty_Ramen_NH_Icon.png" alt="Hearty Ramen">
+                            <h3>Hearty Ramen</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/5/52/Miso_Ramen_NH_Icon.png" alt="Miso Ramen">
+                            <h3>Miso Ramen</h3>
+                         </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/1/18/Nigirizushi_NH_Icon.png" alt="Nigirizushi">
+                            <h3>Nigirizushi</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/f/f5/Pad_Krapow_NH_Icon.png" alt="Pad Kaprow">
+                            <h3>Pad Kaprow</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/2/23/Shio_Ramen_NH_Icon.png" alt="Shio Ramen">
+                            <h3>Shio Ramen</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/7/74/Shoyu_Ramen_NH_Icon.png" alt="Shoyu Ramen">
+                            <h3>Shoyu Ramen</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/6/60/Spaghetti_Carbonara_NH_Icon.png" alt="Spaghetti Carbonara">
+                            <h3>Spaghetti Carbonara</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/0/0e/Tantanmen_NH_Icon.png" alt="Tantanmen">
+                            <h3>Tantanmen</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/e/ef/Biryani_NH_Icon.png" alt="Biryani">
+                            <h3>Biryani</h3>
+                        </article>
+                        
+                        <article>
+                            <img src="https://dodo.ac/np/images/e/ea/Fried_Rice_NH_Icon.png" alt="Fried Rice">
+                            <h3>Fried Rice</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/7/76/Curry_with_Rice_NH_Icon.png" alt="Curry With Rice">
+                            <h3>Curry With Rice</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/c/cd/Omurice_NH_Icon.png" alt="Omurice">
+                            <h3>Omurice</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/2/2d/Pilaf_NH_Icon.png" alt="Pilaf">
+                            <h3>Pilaf</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/e/e5/Risotto_NH_Icon.png" alt="Risotto">
+                            <h3>Risotto</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/9/90/Spaghetti_Peperoncino_NH_Icon.png" alt="Spaghetti Peperoncino">
+                            <h3>Spaghetti Peperoncino</h3>
+                        </article>
+                    <br><br>
+                    </div>
+                    <h2>Drinks</h2>
+                    <div class="menu-grid">
+
+                        <article>
+                            <img src="https://img.game8.co/3460833/af64fcb80451138cae72f17b295e2f0d.png/show" alt="Milkshake">
+                            <h3>Milkshake</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/f/fa/Iced_Coffee_NH_Icon.png" alt="Iced Coffee">
+                            <h3>Iced Coffee</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/1/19/Iced_Lemon_Tea_NH_Icon.png" alt="Iced Lemon Tea">
+                            <h3>Iced Lemon Tea</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/0/0a/Melon_Soda_NH_Icon.png" alt="Melon Soda">
+                            <h3>Melon Soda</h3>
+                        </article>
+
+                        <article>
+                            <img src="https://dodo.ac/np/images/4/47/Strawberry_Soda_NH_Icon.png" alt="Strawberry Soda">
+                            <h3>Strawberry Soda</h3>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Place your order section-->
+                <!-- The "Place Your Order" section must include a <form> element with the following inputs: -->
+                <form>
+                    <section id="form">
+                        <h2 class="main-heading">Place your order here: </h2>
+                        <h3>Foods</h3>
+                        <div class="form-grid">
+                            <!-- Number inputs for each menu item (make sure to validate input with a minimum of 0). -->
+                            <div>
+                                <label>Hearty Ramen</label>
+                                <input type="number" class="number-input" name="hearty-ramen-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Miso Ramen</label>
+                                <input type="number" class="number-input" name="miso-ramen-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Nigirizushi</label>
+                                <input type="number" class="number-input" name="nigirizushi-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Pad Kaprow</label>
+                                <input type="number" class="number-input" name="pad-kaprow-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Shio Ramen</label>
+                                <input type="number" class="number-input" name="shio-ramen-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Shoyu Ramen</label>
+                                <input type="number" class="number-input" name="shoyu-ramen-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Spaghetti Carbonara</label>
+                                <input type="number" class="number-input" name="spaghetti-carbonara-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Tantanmen</label>
+                                <input type="number" class="number-input" name="tantanmen-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Biryani</label>
+                                <input type="number" class="number-input" name="biryani-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Fried Rice</label>
+                                <input type="number" class="number-input" name="fried-rice-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Curry With Rice</label>
+                                <input type="number" class="number-input" name="curry-with-rice-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Omurice</label>
+                                <input type="number" class="number-input" name="omurice-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Pilaf</label>
+                                <input type="number" class="number-input" name="pilaf-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Risotto</label>
+                                <input type="number" class="number-input" name="risotto-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Spaghetti Peperoncino</label>
+                                <input type="number" class="number-input" name="spaghetti-peperoncino-qty" min="0" value="0" required>
+                            </div>
+
+                        </div>
+                        <br>
+                        <h3>Drinks</h3>
+                        <div class="form-grid">
+                            <div>
+                                <label>Milkshake</label>
+                                <input type="number" class="number-input" name="milk-shake-qty" min="0" value="0" required>
+                            </div>
+                            
+                            <div>
+                                <label>Iced Coffee</label>
+                                <input type="number" class="number-input" name="iced-coffee-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Iced Lemon Tea</label>
+                                <input type="number" class="number-input" name="lemon-tea-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Melon Soda</label>
+                                <input type="number" class="number-input" name="melond-soda-qty" min="0" value="0" required>
+                            </div>
+
+                            <div>
+                                <label>Strawberry Soda</label>
+                                <input type="number" class="number-input" name="strawberr-soda-qty" min="0" value="0" required>
+                            </div>
+
+                        </div><br><br>
+
+                    <!-- Radio and/or checkbox inputs for things like sides and add ons -->
+                        <h3>Choose your extras: </h3>
+                            <div class="extras">
+                                <label>
+                                    <input type="checkbox" name="miso-soup" value="miso-soup"> Miso Soup 
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="mushroom-soup" value="mushroom-soup"> Mushroom Soup 
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="salad" value="salad"> Salad
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="mashed-potato" value="mashed-potato"> Mashed Potato
+                                </label>
+                            </div>
+                            <br><br>
+                        
+                    <!-- At least one <textarea> element for one of the itemrs (for special requests) -->
+                        <div class="special-request">
+                            <h3>Special Requests</h3>
+                                <label for="special-request">Any special requests?</label>
+                                <textarea rows="4" cols="120"></textarea>
+                        </div>
+                        <br><br>
+
+                    <!-- A submit input that says "Go To Checkout" -->
+                        <div class="submit-btn">
+                            <input type="submit" value="Go To Checkout">
+                        </div>
+                    </section>
+                </form>
+        </main>
+
+        <footer>
+            <!-- A footer that includes a <p> paragraph element that reads "Made with love by " followed by your Codédex username. -->
+        </footer>
+    <!-- BONUS: Please feel free to use the style attribute or <style> element to give your menu some flair! -->
+    </body>
+</html>
+
