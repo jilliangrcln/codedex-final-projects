@@ -16,7 +16,7 @@ async function fetchWeather() {
       return;
     }
   
-    // Step b. Get lat and lon coordinates via Geocoding API
+    // Get lat and lon coordinates via Geocoding API
     async function getLonAndLat() {
       const countryCode = 63
       const geocodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.replace(" ", "%20")},${countryCode}&limit=1&appid=${apiKey}`
@@ -43,11 +43,11 @@ async function fetchWeather() {
     }
   
     async function getWeatherData(lon, lat) {
-      // Step c. Get weather information via Current Weather API
+      // Get weather information via Current Weather API
       const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
       const response = await fetch(weatherURL);
   
-      // Step d. Display the weather data
+      // Display the weather data
       const data = await response.json();
       weatherDataSection.style.display = "flex";
       weatherDataSection.innerHTML = `
@@ -60,7 +60,6 @@ async function fetchWeather() {
       `
     }
   
-    // These are part of Step d.
     document.getElementById("search").value = "";
     const geocodeData = await getLonAndLat();
     getWeatherData(geocodeData.lon, geocodeData.lat);
