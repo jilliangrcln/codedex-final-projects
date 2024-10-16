@@ -5,9 +5,44 @@
 }
 
 body {
-    background-image: url(https://bit.ly/4bcK1Hc);
+    background-image: url(Assets/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     font-family:'Gill Sans', 'Gill Sans MT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#0f3057;
     height: 100vh;
+}
+
+main {
+    background-color: #6eacda;
+    position: relative;
+    top: 30%;
+    border: 1px solid;
+    border-radius: 5px;
+    min-width: 540px;
+    max-width: 50%;
+    margin: auto;
+    padding: 2em;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+#search {
+    border-radius: 5px 0 0 5px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    height: 42px;
+}
+
+#submit {
+    border-radius: 0 5px 5px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 5em;
+    cursor: pointer;
 }
