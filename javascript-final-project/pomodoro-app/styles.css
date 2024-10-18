@@ -102,3 +102,19 @@ button {
 button:hover {
     color: #90c0d1;
 }
+
+.btn-start {
+    color: #d8e9ef;
+}
+
+.btn-pause {
+    color: #f7c948;
+}
+
+.btn-reset {
+    color: #f03a47;
+}
+
+button:focus {
+    outline: 2px solid #d8e9ef;
+}
