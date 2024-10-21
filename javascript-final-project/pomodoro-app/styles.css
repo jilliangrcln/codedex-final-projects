@@ -4,7 +4,7 @@ html {
     letter-spacing: 0.8px;
     min-height: 100vh;
     color: #d8e9ef;
-    background-image: linear-gradient(-20deg, #025159 0%, #733b36 100%);
+    background-image: linear-gradient(-120deg, #ff1493, #800080);
     background-size: cover;
 }
 
@@ -72,11 +72,11 @@ p {
 }
 
 .circle {
-    border-color: #bf5239;
+    border-color: #ffc0cb;
 }
 
 .circle-mask {
-    border-color: #e85a71;
+    border-color: #f5f5f5;
 }
 
 .app-counter-box {
@@ -104,15 +104,21 @@ button:hover {
 }
 
 .btn-start {
-    color: #d8e9ef;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    color: #77dd77;
 }
 
 .btn-pause {
-    color: #f7c948;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    color: #fdfd96;
 }
 
 .btn-reset {
-    color: #f03a47;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    color: #a4cdec;
 }
 
 button:focus {
