@@ -34,5 +34,4 @@ languages and frameworks.
  
 ## Installation and Setup
 1. Clone the repository:
-'''bash
 git clone https://github.com/jilliangrcln/codedex-final-projects
